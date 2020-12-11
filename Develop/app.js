@@ -12,13 +12,38 @@ const render = require("./lib/htmlRenderer");
 
 const teamList = [];
 
-async function teamInput() {
-    const answer = await inquirer.prompt([{
+function teamInput() {
+
+inquirer
+
+    .prompt([{
         type: "input",
         message: "What is your name",
-        name: "name",
-    }])
-    console.log(answer.name);
+        name: "name",  
+    },
+    {
+        type: "number",
+        message: "What is your ID",
+        name: "id",
+    },
+    {
+        type: "input",
+        message: "What is your email",
+        name: "email",
+    },
+    {
+        type: "list",
+        message: "What is your role",
+        name: "role",
+        choices: ["Engineer, Intern, Manager"],
+    }
+])
+.then(
+    function ({name, id, email, role}) {
+
+    }
+)
+    
 }
 teamInput()
 
