@@ -31,9 +31,9 @@ function managerInfo() {
         type: "input",
         message: "Enter Manager's number",
         name: "officeNumber",
-    }]).then((engineerInput) => {
+    }]).then((internInput) => {
 
-        const newManager = new Manager(engineerInput.name, engineerInput.id, engineerInput.email, engineerInput.officeNumber);
+        const newManager = new Manager(internInput.name, internInput.id, internInput.email, internInput.officeNumber);
         teamInput.push(newManager);
         employeeInput();
 
@@ -48,13 +48,13 @@ function employeeInput() {
         type: "list",
         name: "addEmployee",
         message: "Which type of employee would you like to add?",
-        choices: [{ name: "Engineer", value: 0 }, { name: "Intern", value: 1 }, { name: "I don't want to add any more team members", value: 3 }],
+        choices: [{ name: "Engineer", value: 0 }, { name: "Intern", value: 1 }, { name: "I don't want to add any more team members", value: 2 }],
     }]).then((employeeType) => {
         //if they selected engineer, ask engineer questions
-        if (employeeType.newEmployee === 0) {
+        if (employeeType.addEmployee === 0) {
             engineerInfo();
             //else, ask Intern questions
-        } else if (employeeType.newEmployee === 1) {
+        } else if (employeeType.addEmployee === 1) {
             internInfo();
             // else, ask Manager questions
         }  else {
@@ -82,10 +82,39 @@ function engineerInfo() {
         type: "input",
         message: "Enter Engineer's GitHub username",
         name: "gitHub",
-    }]).then((engineerInput) => {
+    }]).then((internInput) => {
 
-        const newEngineer = new Engineer(engineerInput.name, engineerInput.id, engineerInput.email, engineerInput.officeNumber);
+        const newEngineer = new Engineer(internInput.name, internInput.id, internInput.email, internInput.officeNumber);
         teamInput.push(newEngineer);
+        employeeInput();
+
+    });
+
+}
+
+//Engineer information template
+function internInfo() {
+    
+    return inquirer.prompt([{
+        type: "input",
+        message: "Enter Intern's name",
+        name: "name",
+    }, {
+        type: "input",
+        message: "Enter Intern's ID",
+        name: "id",
+    }, {
+        type: "input",
+        message: "Enter Intern's email",
+        name: "email",
+    }, {
+        type: "input",
+        message: "Enter Intern's GitHub username",
+        name: "gitHub",
+    }]).then((internInput) => {
+
+        const newIntern = new Intern(internInput.name, internInput.id, internInput.email, internInput.officeNumber);
+        teamInput.push(newIntern);
         employeeInput();
 
     });
