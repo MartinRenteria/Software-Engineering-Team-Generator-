@@ -49,7 +49,7 @@ function employeeInput() {
         type: "list",
         name: "addEmployee",
         message: "Which type of employee would you like to add?",
-        choices: [{ name: "Engineer", value: 0 }, { name: "Intern", value: 1 }, { name: "Manager", value: 2 }, { name: "I don't want to add any more team members", value: 3 }],
+        choices: [{ name: "Engineer", value: 0 }, { name: "Intern", value: 1 }, { name: "I don't want to add any more team members", value: 3 }],
     }]).then((employeeType) => {
         //if they selected engineer, ask engineer questions
         if (employeeType.newEmployee === 0) {
@@ -58,10 +58,7 @@ function employeeInput() {
         } else if (employeeType.newEmployee === 1) {
             internInfo();
             // else, ask Manager questions
-        } else if (employeeType.newEmployee === 2) {
-            managerInfo();
-            //exit application
-        } else {
+        }  else {
             createHtmlFile();
         }
     });
