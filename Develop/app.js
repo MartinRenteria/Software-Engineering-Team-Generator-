@@ -34,10 +34,14 @@ function ManagerInfo() {
         }]).then((managerInput) => {
     
             const newManager = new Manager(managerInput.name, managerInput.id, managerInput.email, managerInput.officeNumber);
-            employeeList.push(newManager);
+            teamInput.push(newManager);
             ManagerInfo();
     
         });
     
     }
+
+    ManagerInfo();
+
+
     
