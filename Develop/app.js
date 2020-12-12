@@ -21,19 +21,19 @@ function managerInfo() {
         name: "name",
     }, {
         type: "input",
-        message: "Enter Manager's ID?",
+        message: "Enter Manager's ID",
         name: "id",
     }, {
         type: "input",
-        message: "Enter Manager's email?",
+        message: "Enter Manager's email",
         name: "email",
     }, {
         type: "input",
-        message: "Enter Manager's number?",
+        message: "Enter Manager's number",
         name: "officeNumber",
-    }]).then((managerInput) => {
+    }]).then((engineerInput) => {
 
-        const newManager = new Manager(managerInput.name, managerInput.id, managerInput.email, managerInput.officeNumber);
+        const newManager = new Manager(engineerInput.name, engineerInput.id, engineerInput.email, engineerInput.officeNumber);
         teamInput.push(newManager);
         employeeInput();
 
@@ -41,8 +41,7 @@ function managerInfo() {
 
 }
 
-
-// Starting page
+// Employee options
 function employeeInput() {
 
     return inquirer.prompt([{
@@ -62,6 +61,35 @@ function employeeInput() {
             createHtmlFile();
         }
     });
+}
+
+//Engineer information template
+function engineerInfo() {
+    
+    return inquirer.prompt([{
+        type: "input",
+        message: "Enter Engineer's name",
+        name: "name",
+    }, {
+        type: "input",
+        message: "Enter Engineer's ID",
+        name: "id",
+    }, {
+        type: "input",
+        message: "Enter Engineer's email",
+        name: "email",
+    }, {
+        type: "input",
+        message: "Enter Engineer's GitHub username",
+        name: "gitHub",
+    }]).then((engineerInput) => {
+
+        const newEngineer = new Engineer(engineerInput.name, engineerInput.id, engineerInput.email, engineerInput.officeNumber);
+        teamInput.push(newEngineer);
+        employeeInput();
+
+    });
+
 }
 
     function createHtmlFile() {
