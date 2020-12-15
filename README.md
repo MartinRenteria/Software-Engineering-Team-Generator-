@@ -12,7 +12,7 @@ Enter node.js to initiate the program and begin forming your team.
 
 [View the video on screencastify by clicking here](https://drive.google.com/file/d/17VOSuZZ1oXjFJkRrEM2XEya3WuqXhs1u/view).
 
-![Video Gif](Develop\Img\Team-Generator.gif)
+![](Team-Generator.gif)
 
 
 ## **Questions**
