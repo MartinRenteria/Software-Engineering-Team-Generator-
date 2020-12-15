@@ -82,9 +82,9 @@ function engineerInfo() {
         type: "input",
         message: "Enter Engineer's GitHub username",
         name: "gitHub",
-    }]).then((internInput) => {
+    }]).then((engineerInput) => {
 
-        const newEngineer = new Engineer(internInput.name, internInput.id, internInput.email, internInput.officeNumber);
+        const newEngineer = new Engineer(engineerInput.name, engineerInput.id, engineerInput.email, engineerInput.gitHub);
         teamInput.push(newEngineer);
         employeeInput();
 
@@ -109,11 +109,11 @@ function internInfo() {
         name: "email",
     }, {
         type: "input",
-        message: "Enter Intern's GitHub username",
+        message: "Enter Intern's school",
         name: "gitHub",
     }]).then((internInput) => {
 
-        const newIntern = new Intern(internInput.name, internInput.id, internInput.email, internInput.officeNumber);
+        const newIntern = new Intern(internInput.name, internInput.id, internInput.email, internInput.school);
         teamInput.push(newIntern);
         employeeInput();
 
