@@ -125,7 +125,7 @@ function internInfo() {
 
         const employeeTeamPage = render(teamInput);
     
-        fs.writeFile("output.html", employeeTeamPage, (err) => {
+        fs.writeFile("team.html", employeeTeamPage, (err) => {
             if (err) console.log("Unable to write file");
             else console.log("File was written successfully");
         });
