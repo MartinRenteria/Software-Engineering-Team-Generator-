@@ -110,7 +110,7 @@ function internInfo() {
     }, {
         type: "input",
         message: "Enter Intern's school",
-        name: "gitHub",
+        name: "school",
     }]).then((internInput) => {
 
         const newIntern = new Intern(internInput.name, internInput.id, internInput.email, internInput.school);
